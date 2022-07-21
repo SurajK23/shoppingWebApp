@@ -33,7 +33,7 @@ async function getData() {
     Price.classList.add("price");
     cards.id = id;
     cards.addEventListener("click", function () {
-      document.location = `../pd.html?p=${id}`;
+      document.location = `./pd.html?p=${id}`;
     });
 
     img.src = preview;
