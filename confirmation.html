@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <style>
+      #container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+      }
+      .greenlogo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: rgb(31, 212, 31);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .fa {
+        color: white;
+        font-size: 50px;
+      }
+      h2 {
+        font-size: x-large;
+      }
+      p {
+        color: rgb(100, 100, 100);
+        font-size: small;
+        margin-top: -15px;
+      }
+      .toggleSpan {
+        top: 50px;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/35c398e458.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="leftMenu">
+        <div class="logo">
+          <a href="index.html"> <span>SHOP</span>LANE </a>
+        </div>
+        <a class="leftItem" href="./index.html#head1">CLOTHING</a>
+        <a class="leftItem" href="./index.html#head2">ACCESSORIES</a>
+      </div>
+      <div class="serachbar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search for Clothing and Accessories" />
+      </div>
+      <div class="rightMenu">
+        <div id="cWrapper">
+          <div id="cartBadge">1</div>
+          <a href="./checkout.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+        <div class="menuwrap">
+          <div id="" class="hambergur"><i class="fas fa-bars"></i></div>
+          <div class="toggleSpan">
+            <a class="tog1" href="./index.html#head1"><b>CLOTHING</b></a
+            ><br /><br />
+            <a class="tog2" href="./index.html#head2"><b>ACCESSORIES</b></a
+            ><br /><br />
+            <div id="cWrapp">
+              <div id="cartBadge"></div>
+              <a href="./checkout.html"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <img src="./assets/avatar.jpg" alt="" />
+      </div>
+    </header>
+    <div id="container">
+      <div class="greenlogo"><i class="fa fa-check"></i></div>
+      <div><h2>Order Placed Successfully!!</h2></div>
+      <div><p>We have sent you an email with the order details</p></div>
+    </div>
+    <footer>
+      <div class="first">
+        <p class="footHead">Online Store</p>
+        <a href="/" class="footer-link">Men Clothing</a>
+        <a href="/" class="footer-link">Women Clothing</a>
+        <a href="/" class="footer-link">Men Accessories</a>
+        <a href="/" class="footer-link">Women Accessories</a>
+      </div>
+      <div class="second">
+        <p class="footHead">Helpful Links</p>
+        <a href="/" class="footer-link">Home</a>
+        <a href="/" class="footer-link">About</a>
+        <a href="/" class="footer-link">Contact</a>
+      </div>
+      <div class="third">
+        <p class="footHead">Partners</p>
+        <a href="/" class="footer-link">Zara</a>
+        <a href="/" class="footer-link">Pantaloons</a>
+        <a href="/" class="footer-link">Levis</a>
+        <a href="/" class="footer-link">UCB</a>
+        <a href="/" class="footer-link">+ Many More</a>
+      </div>
+      <div class="fourth">
+        <p class="footHead">Address</p>
+        <p href="/" class="footer-link">Building 101</p>
+        <p href="/" class="footer-link">Central Avenue</p>
+        <p href="/" class="footer-link">LA - 902722</p>
+        <p href="/" class="footer-link">United States</p>
+      </div>
+    </footer>
+    <div class="projectLogo"></div>
+    <script>
+      let badge = document.querySelector("#cartBadge");
+      // let count;
+      let counter;
+      let count = localStorage.getItem("arrayId2");
+      if (count == null) {
+        badge.classList.add("none");
+      } else {
+        counter = count.split(",").length - 1;
+        badge.innerHTML = counter;
+      }
+
+      localStorage.clear();
+
+      count = localStorage.getItem("arrayId2");
+      if (count == null) {
+        badge.classList.add("none");
+      } else {
+        counter = count.split(",").length - 1;
+        badge.innerHTML = counter;
+      }
+
+      let burger = document.querySelector(".hambergur");
+      burger.addEventListener("click", function () {
+        let span = document.querySelector(".toggleSpan");
+        span.style = "display:block";
+        burger.style = "display:none";
+        span.addEventListener("click", function () {
+          span.style = "display:none";
+          burger.style = "display:block";
+        });
+      });
+    </script>
+  </body>
+</html>
